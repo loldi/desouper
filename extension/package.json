@@ -1,0 +1,14 @@
+{
+  "name": "desouper",
+  "version": "0.1.0",
+  "description": "Browser extension that filters alphabet soup sellers from Amazon and Walmart search results.",
+  "private": true,
+  "scripts": {
+    "build": "node build.js",
+    "build:firefox": "node build.js firefox",
+    "test:scorer": "node tests/scorer.test.js"
+  },
+  "devDependencies": {
+    "jsdom": "^24.1.3"
+  }
+}

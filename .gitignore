@@ -1,0 +1,11 @@
+# Dependencies and build output
+node_modules/
+.env
+.DS_Store
+Thumbs.db
+*.crx
+*.pem
+*.zip
+
+# Extension build output (optional: remove to commit built extension)
+extension/dist/

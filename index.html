@@ -1,0 +1,482 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Desouper - Hide Alphabet Soup Sellers on Amazon &amp; Walmart</title>
+  <link rel="stylesheet" href="styles.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+</head>
+<body>
+
+  <!-- Nav -->
+  <nav class="nav" id="nav">
+    <div class="nav-inner">
+      <a href="#" class="nav-logo">
+        <span class="logo-icon">&#x1f6ab;</span>
+        Desouper
+      </a>
+      <div class="nav-right">
+        <a href="#how-it-works" class="nav-link">How It Works</a>
+        <a href="#features" class="nav-link">Features</a>
+        <button class="nav-cta notify-trigger">Notify Me on Release</button>
+      </div>
+      <button class="nav-toggle" id="nav-toggle" aria-label="Toggle menu">
+        <span></span><span></span>
+      </button>
+    </div>
+  </nav>
+
+  <!-- Hero -->
+  <header class="hero">
+    <div class="hero-inner">
+      <h1>A browser extension that hides<br>those alphabet soup sellers</h1>
+      <p class="hero-sub">
+        Sellers with names like XKJRUIE and TUYUUOR are flooding marketplace 
+        search results with low-quality products. Desouper detects and 
+        removes them.
+      </p>
+      <button class="cta-btn notify-trigger">Notify Me on Release</button>
+      <p class="hero-note">Coming soon for Chrome and Firefox &bull; No account required</p>
+    </div>
+  </header>
+
+  <!-- How It Works -->
+  <section class="how-section" id="how-it-works">
+    <div class="section-inner">
+      <h2 class="section-heading">How it works</h2>
+      <div class="steps">
+        <div class="step">
+          <div class="step-number">1</div>
+          <h3>Install</h3>
+          <p>Add the extension from the Chrome Web Store. No account or setup needed.</p>
+        </div>
+        <div class="step">
+          <div class="step-number">2</div>
+          <h3>Browse</h3>
+          <p>Search for products on Amazon or Walmart as usual. The extension runs automatically.</p>
+        </div>
+        <div class="step">
+          <div class="step-number">3</div>
+          <h3>Results</h3>
+          <p>Flagged sellers are hidden, dimmed, or badged depending on your settings. Legitimate sellers remain.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Feature 1: The Problem (before/after) -->
+  <section class="showcase showcase-alt" id="features">
+    <div class="showcase-inner">
+      <div class="showcase-text">
+        <p class="showcase-label">The Problem</p>
+        <h2>Most Amazon search results are noise</h2>
+        <p>
+          A large percentage of third-party sellers on Amazon and Walmart use 
+          randomly generated names like <span class="slop-name">XKJRUIE</span>, 
+          <span class="slop-name">TUYUUOR</span>, and <span class="slop-name">BFGQWZ</span>. 
+          These sellers typically list low-quality products with misleading photos 
+          and manufactured reviews. They make it significantly harder to find 
+          legitimate products.
+        </p>
+      </div>
+      <div class="showcase-visual">
+        <div class="before-after">
+          <div class="ba-panel ba-before">
+            <div class="ba-label">Without Desouper</div>
+            <div class="ba-listing">
+              <div class="ba-thumb"></div>
+              <div class="ba-info">
+                <div class="ba-bar"></div>
+                <div class="ba-seller slop">XKJRUIE <span class="slop-tag">Suspicious</span></div>
+              </div>
+            </div>
+            <div class="ba-listing">
+              <div class="ba-thumb"></div>
+              <div class="ba-info">
+                <div class="ba-bar"></div>
+                <div class="ba-seller slop">BFGQWZ <span class="slop-tag">Suspicious</span></div>
+              </div>
+            </div>
+            <div class="ba-listing">
+              <div class="ba-thumb good"></div>
+              <div class="ba-info">
+                <div class="ba-bar"></div>
+                <div class="ba-seller good">Sony Official</div>
+              </div>
+            </div>
+            <div class="ba-listing">
+              <div class="ba-thumb"></div>
+              <div class="ba-info">
+                <div class="ba-bar"></div>
+                <div class="ba-seller slop">QQPFHD <span class="slop-tag">Suspicious</span></div>
+              </div>
+            </div>
+          </div>
+          <div class="ba-panel ba-after">
+            <div class="ba-label">With Desouper</div>
+            <div class="ba-listing">
+              <div class="ba-thumb good"></div>
+              <div class="ba-info">
+                <div class="ba-bar"></div>
+                <div class="ba-seller good">Sony Official <span class="trusted-tag">&#x2713; Trusted</span></div>
+              </div>
+            </div>
+            <div class="ba-listing">
+              <div class="ba-thumb good"></div>
+              <div class="ba-info">
+                <div class="ba-bar"></div>
+                <div class="ba-seller good">Anker Direct <span class="trusted-tag">&#x2713; Trusted</span></div>
+              </div>
+            </div>
+            <div class="ba-listing">
+              <div class="ba-thumb good"></div>
+              <div class="ba-info">
+                <div class="ba-bar"></div>
+                <div class="ba-seller good">Bose Store <span class="trusted-tag">&#x2713; Trusted</span></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Feature 2: Smart Detection + Counter Badge -->
+  <section class="showcase">
+    <div class="showcase-inner showcase-reverse">
+      <div class="showcase-text">
+        <p class="showcase-label">Detection</p>
+        <h2>Scoring is based on multiple signals</h2>
+        <p>
+          Each seller is evaluated against several criteria: name entropy 
+          (gibberish detection), account age, review distribution patterns, and 
+          listing quality indicators. Sellers that fall below the threshold are 
+          flagged. A badge counter on the extension icon shows the number of 
+          filtered listings per page.
+        </p>
+      </div>
+      <div class="showcase-visual">
+        <div class="detection-demo">
+          <div class="dd-header">
+            <div class="dd-icon-badge">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10Z"/></svg>
+              <span class="dd-badge-count">4</span>
+            </div>
+            <span class="dd-header-text">4 soup sellers filtered on this page</span>
+          </div>
+          <div class="dd-divider"></div>
+          <div class="dd-row">
+            <span class="dd-name dd-slop">XKJRUIE</span>
+            <div class="dd-bar-track"><div class="dd-bar-fill dd-fail" style="width: 12%"></div></div>
+            <span class="dd-verdict dd-fail-text">Blocked</span>
+          </div>
+          <div class="dd-row">
+            <span class="dd-name dd-slop">TUYUUOR</span>
+            <div class="dd-bar-track"><div class="dd-bar-fill dd-fail" style="width: 8%"></div></div>
+            <span class="dd-verdict dd-fail-text">Blocked</span>
+          </div>
+          <div class="dd-row">
+            <span class="dd-name dd-good">Sony Official</span>
+            <div class="dd-bar-track"><div class="dd-bar-fill dd-pass" style="width: 96%"></div></div>
+            <span class="dd-verdict dd-pass-text">Trusted</span>
+          </div>
+          <div class="dd-row">
+            <span class="dd-name dd-slop">BFGQWZ</span>
+            <div class="dd-bar-track"><div class="dd-bar-fill dd-fail" style="width: 5%"></div></div>
+            <span class="dd-verdict dd-fail-text">Blocked</span>
+          </div>
+          <div class="dd-row">
+            <span class="dd-name dd-good">Anker Direct</span>
+            <div class="dd-bar-track"><div class="dd-bar-fill dd-pass" style="width: 91%"></div></div>
+            <span class="dd-verdict dd-pass-text">Trusted</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Feature 3: Verified Sellers + Transparency -->
+  <section class="showcase showcase-alt">
+    <div class="showcase-inner">
+      <div class="showcase-text">
+        <p class="showcase-label">Verified Sellers</p>
+        <h2>Trusted sellers are labeled with reasoning</h2>
+        <p>
+          Sellers that score above the trust threshold receive a verified badge 
+          directly on the listing. Clicking the badge shows the specific criteria 
+          that contributed to the score: account age, review patterns, brand 
+          registration status, and community report history. If a badge appears 
+          incorrect, users can submit a dispute for manual review.
+        </p>
+      </div>
+      <div class="showcase-visual">
+        <div class="trust-card">
+          <div class="tc-header">
+            <span class="tc-badge">&#x2713; Verified Seller</span>
+            <span class="tc-name">Anker Direct</span>
+          </div>
+          <div class="tc-divider"></div>
+          <div class="tc-section-label">Why this seller is verified</div>
+          <div class="tc-reasons">
+            <div class="tc-reason">
+              <span class="tc-check">&#x2713;</span>
+              <span>Registered seller name (not gibberish)</span>
+            </div>
+            <div class="tc-reason">
+              <span class="tc-check">&#x2713;</span>
+              <span>Active for 8+ years on Amazon</span>
+            </div>
+            <div class="tc-reason">
+              <span class="tc-check">&#x2713;</span>
+              <span>Consistent review patterns (no suspicious clusters)</span>
+            </div>
+            <div class="tc-reason">
+              <span class="tc-check">&#x2713;</span>
+              <span>Brand-registered with Amazon</span>
+            </div>
+            <div class="tc-reason">
+              <span class="tc-check">&#x2713;</span>
+              <span>0 community reports filed</span>
+            </div>
+          </div>
+          <div class="tc-divider"></div>
+          <div class="tc-footer">
+            <span class="tc-score">Trust Score: <strong>94/100</strong></span>
+            <button class="tc-report-btn">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 15s1-1 4-1 5 2 8 2 4-1 4-1V3s-1 1-4 1-5-2-8-2-4 1-4 1z"/><line x1="4" y1="22" x2="4" y2="15"/></svg>
+              Report incorrect badge
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Feature 4: Community Reporting -->
+  <section class="showcase">
+    <div class="showcase-inner showcase-reverse">
+      <div class="showcase-text">
+        <p class="showcase-label">Reporting</p>
+        <h2>User reports go through manual review</h2>
+        <p>
+          Users can report sellers directly from any listing. Reports are queued 
+          for manual review before any action is taken. This prevents abuse 
+          and protects legitimate sellers from false flags. Confirmed reports 
+          propagate to the shared blocklist automatically.
+        </p>
+      </div>
+      <div class="showcase-visual">
+        <div class="report-flow">
+          <div class="rf-step">
+            <div class="rf-icon">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 15s1-1 4-1 5 2 8 2 4-1 4-1V3s-1 1-4 1-5-2-8-2-4 1-4 1z"/><line x1="4" y1="22" x2="4" y2="15"/></svg>
+            </div>
+            <div class="rf-label">User reports seller</div>
+          </div>
+          <div class="rf-arrow">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+          </div>
+          <div class="rf-step rf-review">
+            <div class="rf-icon">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2 12s3-7 10-7 10 7 10 7-3 7-10 7-10-7-10-7Z"/><circle cx="12" cy="12" r="3"/></svg>
+            </div>
+            <div class="rf-label">Manual review</div>
+            <div class="rf-sublabel">Every report is verified before action</div>
+          </div>
+          <div class="rf-arrow">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+          </div>
+          <div class="rf-step">
+            <div class="rf-icon">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10Z"/></svg>
+            </div>
+            <div class="rf-label">Blocklist updates for all users</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Feature 5: Your Controls + Blocklist -->
+  <section class="showcase showcase-alt">
+    <div class="showcase-inner">
+      <div class="showcase-text">
+        <p class="showcase-label">Configuration</p>
+        <h2>Filter behavior is user-configurable</h2>
+        <p>
+          Three filter modes: badge only, dim, or hide completely. Sensitivity is 
+          adjustable. Users can maintain a personal whitelist to override the filter 
+          for specific sellers, and a personal blocklist to force-filter sellers 
+          regardless of their score.
+        </p>
+      </div>
+      <div class="showcase-visual">
+        <div class="controls-demo">
+          <div class="cd-row">
+            <span class="cd-label">Filter Mode</span>
+            <div class="cd-toggle-group">
+              <span class="cd-opt">Badge</span>
+              <span class="cd-opt active">Dim</span>
+              <span class="cd-opt">Hide</span>
+            </div>
+          </div>
+          <div class="cd-row">
+            <span class="cd-label">Sensitivity</span>
+            <div class="cd-slider">
+              <div class="cd-slider-track">
+                <div class="cd-slider-fill"></div>
+                <div class="cd-slider-thumb"></div>
+              </div>
+              <span class="cd-slider-val">Medium</span>
+            </div>
+          </div>
+          <div class="cd-row">
+            <span class="cd-label">Marketplaces</span>
+            <div class="cd-checks">
+              <span class="cd-check on">Amazon</span>
+              <span class="cd-check on">Walmart</span>
+              <span class="cd-check off">eBay (soon)</span>
+            </div>
+          </div>
+          <div class="cd-divider"></div>
+          <div class="cd-list-section">
+            <div class="cd-list">
+              <span class="cd-list-label">Your Whitelist</span>
+              <div class="cd-list-items">
+                <span class="cd-list-item wl">Anker Direct <span class="cd-x">&times;</span></span>
+                <span class="cd-list-item wl">iRobot Store <span class="cd-x">&times;</span></span>
+              </div>
+            </div>
+            <div class="cd-list">
+              <span class="cd-list-label">Your Blocklist</span>
+              <div class="cd-list-items">
+                <span class="cd-list-item bl">XKJRUIE <span class="cd-x">&times;</span></span>
+                <span class="cd-list-item bl">QQPFHD <span class="cd-x">&times;</span></span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Feature 6: Privacy -->
+  <section class="showcase">
+    <div class="showcase-inner showcase-reverse">
+      <div class="showcase-text">
+        <p class="showcase-label">Privacy</p>
+        <h2>Detection is client-side. No data leaves your browser.</h2>
+        <p>
+          Seller analysis runs entirely in the extension. No browsing history, 
+          search queries, or purchase data is collected or transmitted. The only 
+          network requests are anonymous blocklist syncs and user-initiated 
+          reports. No account system exists. There are no ads.
+        </p>
+      </div>
+      <div class="showcase-visual">
+        <div class="privacy-visual">
+          <div class="pv-row">
+            <div class="pv-icon pv-yes">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+            </div>
+            <span>Client-side detection only</span>
+          </div>
+          <div class="pv-row">
+            <div class="pv-icon pv-yes">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+            </div>
+            <span>Anonymous blocklist sync</span>
+          </div>
+          <div class="pv-row">
+            <div class="pv-icon pv-yes">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+            </div>
+            <span>No account system</span>
+          </div>
+          <div class="pv-divider"></div>
+          <div class="pv-row">
+            <div class="pv-icon pv-no">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+            </div>
+            <span>No browsing data collected</span>
+          </div>
+          <div class="pv-row">
+            <div class="pv-icon pv-no">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+            </div>
+            <span>No purchase data collected</span>
+          </div>
+          <div class="pv-row">
+            <div class="pv-icon pv-no">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+            </div>
+            <span>No ads or tracking</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Bottom CTA -->
+  <section class="bottom-cta">
+    <div class="section-inner">
+      <h2>Not released yet. Leave your email<br>and we'll let you know when it is.</h2>
+      <button class="cta-btn notify-trigger">Notify Me on Release</button>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="footer-inner">
+      <div class="footer-col">
+        <div class="footer-brand">
+          <span class="logo-icon">&#x1f6ab;</span> Desouper
+        </div>
+        <p class="footer-tagline">Filters alphabet soup sellers from Amazon and Walmart.</p>
+      </div>
+      <div class="footer-col">
+        <h4>Product</h4>
+        <a href="#how-it-works">How It Works</a>
+        <a href="#features">Features</a>
+        <a href="#">Chrome Extension</a>
+      </div>
+      <div class="footer-col">
+        <h4>Company</h4>
+        <a href="#">About</a>
+        <a href="#">Blog</a>
+        <a href="#">Contact</a>
+      </div>
+      <div class="footer-col">
+        <h4>Legal</h4>
+        <a href="#">Privacy</a>
+        <a href="#">Terms</a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; 2026 Desouper. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <!-- Notify Modal -->
+  <div class="modal-overlay" id="notify-modal">
+    <div class="modal">
+      <button class="modal-close" id="modal-close" aria-label="Close">&times;</button>
+      <h3>Get notified when it launches</h3>
+      <p>Enter your email and we'll send exactly one message when the extension is available. That's it.</p>
+      <form class="modal-form" id="notify-form">
+        <input type="email" class="modal-input" placeholder="you@example.com" required>
+        <button type="submit" class="modal-submit">Notify Me</button>
+      </form>
+      <div class="modal-success" id="modal-success">
+        <p>Got it. We'll email you on release day.</p>
+      </div>
+      <p class="modal-disclaimer">Your email will only be used to send a single release notification and will be deleted afterward. It will not be shared, sold, or used for anything else.</p>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
