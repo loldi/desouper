@@ -1,24 +1,19 @@
 # Desouper
 
-A browser extension that hides alphabet-soup sellers on Amazon and Walmart. This repo includes the landing page (served via GitHub Pages) and the extension source.
+**Desouper** is a browser extension that hides alphabet-soup sellers on Amazon and Walmart.
 
-## Landing page (GitHub Pages)
+Many marketplace search results are dominated by third-party sellers with randomly generated names like **XKJRUIE**, **TUYUUOR**, or **BFGQWZ**. These sellers often list low-quality products with misleading photos and manufactured reviews, making it harder to find legitimate products. Desouper detects them using signals such as name entropy (gibberish detection), account age, and review patterns, then lets you hide, dim, or badge them so you can focus on trusted sellers.
 
-The site is the root `index.html` plus `styles.css` and `script.js`.
+## Features
 
-**To enable GitHub Pages:**
+- **Smart detection** — Scoring based on multiple signals; suspicious sellers are flagged, trusted ones get a verified badge.
+- **Your choice** — Filter mode: badge only, dim, or hide. Adjustable sensitivity, plus personal whitelist and blocklist.
+- **Privacy-first** — Detection runs in the browser. No browsing or purchase data collected; only optional anonymous blocklist sync and user-initiated reports.
+- **Transparency** — Verified sellers show why they passed (account age, review patterns, brand registration, etc.). User reports go through manual review before affecting the shared blocklist.
 
-1. Open **Settings** → **Pages** in the repo.
-2. Under **Build and deployment** → **Source**, choose **Deploy from a branch**.
-3. Set **Branch** to `main`, folder to **/ (root)**.
-4. Save. The site will be at `https://loldi.github.io/desouper/`.
+Coming soon for Chrome and Firefox. No account required.
 
-## Extension
+## Repo
 
-- **Source:** `extension/`
-- **Build:** From `extension/`, run `node build.js` (see `extension/package.json`).
-- Supports Chrome and Firefox (see `manifest.json` and `manifest.firefox.json`).
-
-## License
-
-All rights reserved.
+- **Landing page:** `index.html`, `styles.css`, `script.js` (hosted on GitHub Pages).
+- **Extension:** `extension/` — run `node build.js` from that folder to build for Chrome and Firefox.
